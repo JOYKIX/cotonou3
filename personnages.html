@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personnages - Cotonou 3: La Chute de l'Abri Delta</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-personnages.css">
+</head>
+<body>
+    <header>
+        <h1>COTONOU 3</h1>
+        <h2>LA CHUTE DE L'ABRI DELTA</h2>
+        <p>Serveur RP Post-Apocalyptique</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="personnages.html">Rôles</a></li>
+            <li><a href="staff.html">Staff</a></li>
+        </ul>
+    </nav>
+    <section id="personnages" class="characters-section">
+        <h2>Les Personnages</h2>
+        <div id="filters">
+            <div id="roleFilters">
+                <button class="filter-btn active" data-importance="all">Tous</button>
+                <button class="filter-btn" data-importance="principal">Principaux</button>
+                <button class="filter-btn" data-importance="secondaire">Secondaires</button>
+                <button class="filter-btn" data-importance="figurant">Figurants</button>
+            </div>
+            <div id="ageFilter">
+                <label for="ageRange">Filtrer par âge :</label>
+                <select id="ageRange">
+                    <option value="all">Tous les âges</option>
+                    <option value="18-25">18-25 ans</option>
+                    <option value="26-35">26-35 ans</option>
+                    <option value="36-45">36-45 ans</option>
+                    <option value="46-60">46-60 ans</option>
+                    <option value="60+">60 ans et plus</option>
+                </select>
+            </div>
+        </div>
+        <div class="character-category">
+            <h3>Personnages des Streamers</h3>
+            <div id="streamerList" class="character-grid"></div>
+        </div>
+        <div class="character-category">
+            <h3>Personnages Disponibles</h3>
+            <div id="communityList" class="character-grid"></div>
+        </div>
+    </section>
+
+    <!-- Overlay pour les fiches personnages -->
+    <div class="overlay">
+        <button class="close-btn">Fermer</button>
+        <h4>Nom du personnage</h4>
+        <p class="dossier-number">Numéro de dossier : XXXX-XXXX</p>
+        <p class="history">Histoire du personnage...</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 - Cotonou 3: La Chute de l'Abri Delta. Créé par Fémi-Mars.</p>
+    </footer>
+    <script src="js/personnages.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+/* Style pour la section de présentation */
+#presentation {
+    padding: 60px;
+    margin: 60px auto;
+    max-width: 1000px;
+    background: #161616;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    border: 2px solid #444;
+    backdrop-filter: blur(6px);
+    position: relative;
+    z-index: 1;
+}
+
+#presentation h2 {
+    font-size: 3rem;
+    color: #66ff66;
+    border-bottom: 4px solid #555;
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#presentation p {
+    font-size: 1.4rem;
+    color: #cccccc;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-align: justify;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Style pour la section des caractéristiques */
+#features {
+    padding: 60px;
+    margin: 60px auto;
+    max-width: 1000px;
+    background: #1a1a1a;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    border: 2px solid #555;
+    backdrop-filter: blur(6px);
+    position: relative;
+    z-index: 1;
+}
+
+#features h2 {
+    font-size: 3rem;
+    color: #66ff66;
+    border-bottom: 4px solid #666;
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.4rem;
+    color: #dddddd;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+#features ul li {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+}
+
+#features ul li::before {
+    content: "✔";
+    color: #66ff66;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.6rem;
+    transform: translateY(2px);
+}
+
+/* Animation pour les sections de l'accueil */
+#presentation, #features {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+#presentation.visible, #features.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

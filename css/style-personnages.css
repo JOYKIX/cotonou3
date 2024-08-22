@@ -1,0 +1,252 @@
+/* Style pour les sections générales des personnages */
+.characters-section {
+    padding: 60px;
+    margin: 60px auto;
+    max-width: 1200px;
+    background: #161616;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    border: 2px solid #444;
+    backdrop-filter: blur(6px);
+    position: relative;
+    z-index: 1;
+}
+
+.characters-section h2 {
+    font-size: 3rem;
+    color: #66ff66;
+    border-bottom: 4px solid #555;
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* Filtres */
+.characters-section #filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.characters-section .filter-btn {
+    background: #1e1e1e;
+    color: #66ff66;
+    border: 2px solid #444;
+    padding: 15px 35px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(50, 50, 50, 0.5);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.characters-section .filter-btn.active, .characters-section .filter-btn:hover {
+    background: #323232;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(50, 50, 50, 0.6);
+}
+
+.characters-section #ageFilter {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative; /* Ajouté pour positionner correctement l'icône de flèche */
+}
+
+.characters-section select {
+    background: #1e1e1e;
+    color: #66ff66;
+    border: 2px solid #444;
+    padding: 15px 35px; /* Alignement des paddings avec les boutons */
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(50, 50, 50, 0.5);
+    transition: all 0.3s ease;
+    appearance: none; /* Pour masquer l'icône par défaut du menu déroulant */
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    width: 100%; /* Pour que le select prenne toute la place */
+}
+
+.characters-section select:hover, .characters-section select:focus {
+    background: #323232;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(50, 50, 50, 0.6);
+}
+
+/* Icône personnalisée pour le menu déroulant */
+.characters-section #ageFilter::after {
+    content: '\25BC'; /* Flèche vers le bas */
+    font-size: 1rem;
+    color: #66ff66;
+    position: absolute;
+    right: 15px;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Cartes des personnages */
+.characters-section .character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+@media (min-width: 768px) {
+    .characters-section .character-grid {
+        grid-template-columns: repeat(3, 1fr); /* Limite à 3 colonnes maximum */
+    }
+}
+
+.characters-section .character-card {
+    background: #2b2b2b;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #444;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+}
+
+.characters-section .character-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 60px rgba(102, 255, 102, 0.8);
+    border-color: #66ff66;
+}
+
+.characters-section .character-card h4 {
+    margin-top: 0;
+    color: #66ff66;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    line-height: 1.2;
+    word-break: break-word; /* Ajout pour forcer la coupure des noms longs */
+}
+
+.characters-section .character-card h4 br {
+    display: block;
+    content: ""; /* Force un retour à la ligne sur les noms */
+}
+
+.characters-section .character-card p {
+    margin: 15px 0;
+    color: #dddddd;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.characters-section .dossier-number {
+    font-style: italic;
+    color: #999999;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.characters-section .history {
+    color: #eaeaea;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-height: 4.8em; /* Limite la hauteur initiale de l'histoire à 4 lignes */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.characters-section .see-more {
+    color: #66ff66;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 5px; /* Ajout pour améliorer l'espacement */
+}
+
+.characters-section .see-more:hover {
+    color: #33cc33;
+}
+
+/* Overlay en plein écran */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleY(0);
+    width: 80%;
+    max-width: 1000px;
+    background: rgba(18, 18, 18, 0.95);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 1);
+    border: 3px solid #33cc33;
+    border-radius: 20px;
+    padding: 40px;
+    z-index: 1000;
+    overflow-y: auto;
+    max-height: 85vh;
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.overlay.active {
+    transform: translate(-50%, -50%) scaleY(1);
+    opacity: 1;
+}
+
+/* Effet de flou en arrière-plan */
+body.overlay-active {
+    overflow: hidden;
+}
+
+body.overlay-active::before,
+body.overlay-active::after {
+    filter: blur(12px);
+}
+
+/* Bouton de fermeture dans l'overlay */
+.overlay .close-btn {
+    background: #66ff66;
+    color: #000000;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.overlay .close-btn:hover {
+    background: #51cf51;
+}
+
+/* Disponibilité des personnages */
+.characters-section .available {
+    color: #33cc33;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.characters-section .not-available {
+    color: #cc0000;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
