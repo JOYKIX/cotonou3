@@ -151,3 +151,40 @@ footer p {
     font-size: 1.2rem;
     letter-spacing: 1px;
 }
+
+/* Style de la barre de défilement pour WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px; /* Largeur de la barre de défilement */
+    height: 12px; /* Hauteur de la barre de défilement horizontale */
+}
+
+/* Couleur de fond de la barre de défilement */
+::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Fond de la piste */
+    border-radius: 6px;
+}
+
+/* Couleur de la poignée de défilement */
+::-webkit-scrollbar-thumb {
+    background: #66ff66; /* Couleur de la poignée */
+    border-radius: 6px;
+    border: 2px solid #121212; /* Bordure pour donner un effet encastré */
+}
+
+/* Apparence au survol */
+::-webkit-scrollbar-thumb:hover {
+    background: #33cc33; /* Couleur de la poignée au survol */
+}
+
+/* Personnalisation pour Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #66ff66 #1a1a1a;
+}
+
+/* Pour Internet Explorer et Edge */
+body {
+    scrollbar-face-color: #66ff66;
+    scrollbar-track-color: #1a1a1a;
+    scrollbar-base-color: #121212;
+}
